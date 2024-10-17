@@ -1,0 +1,60 @@
+{
+	"info": {
+		"_postman_id": "0890e9a8-1a08-4ed7-bbba-318aebeef969",
+		"name": "ERP",
+		"description": "This Postman collection contains API endpoints for managing user data in the ERP backend system. It includes the following functionalities:\n\n1. **Create User**: Allows you to create a new user by providing user details.\n    \n2. **Get All Users**: Retrieves a list of all registered users from the system.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32639307"
+	},
+	"item": [
+		{
+			"name": "create_user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Vyshak\",\r\n    \"lastName\":\"Asokan\",\r\n    \"role\": \"user\",\r\n    \"email\": \"vyshak@gmail.com\",\r\n    \"mobile\": \"8086433771\",\r\n    \"password\":\"vyshak@123\"\r\n    \r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user"
+					]
+				},
+				"description": "**POST /user** (Create User)\n\nThis API is used to create a new user. It accepts user details in the request body and stores them in the database.\n\n**Request**:\n\n- **Method**:POST\n    \n- **Body**: { \"firstName\": \"Vyshak\", \"lastName\":\"Asokan\", \"role\": \"user\", \"email\":\"[vyshak@gmail.com](https://mailto:vyshak@gmail.com)\", \"mobile\": \"8086433771\", \"password\":\"vyshak123\" }\n    \n\n**Response**:\n\n- Returns a success message."
+			},
+			"response": []
+		},
+		{
+			"name": "get_user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				},
+				"description": "**GET /** (Get All Users)\n\nThis API fetches all the users stored in the database.\n\n**Request**:\n\n- **Method**: GET\n    \n\n**Response**:\n\n- Returns an array of user objects with their details.\n    \n\n\\[ { \"id\": 1, \"firstName\": \"Vyshak\", \"lastName\": \"Asokan\", \"role\": \"user\", \"email\": \"[vyshak@gmail.com](https://mailto:vyshak@gmail.com)\", \"mobile\": \"8086433771\", \"password\": \"$2b$10$KrHgWVpYcXIv2Z7.jWqVc.tF7vDDKMHXZ7v1zjYAA0ngNxRgAkerO\" }\\]"
+			},
+			"response": []
+		}
+	]
+}
